@@ -39,6 +39,9 @@ Each review includes:
 - **84,516 users**
 - **1,159,338 directed trust edges**
 - Mean in/out degree: **13.72**
+-  Represents which users trust other users’ opinions
+
+This combination enables the exploration of **collaborative**, **content-based**, and **socially aware recommendation models**.
 
 ---
 
