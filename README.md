@@ -1,4 +1,4 @@
-# Socially-Aware-Markov-Random-Field-for-Personalized-Recommendation
+# Socially-Aware-Spatial-Markov-Random-Field-for-Personalized-Recommendation
 Developed a top-10 item recommendation system for a user using the Socially-Aware Bayesian Markov Model.
 **EDA, Probabilistic Models, and Social-Aware Recommendations**
 
