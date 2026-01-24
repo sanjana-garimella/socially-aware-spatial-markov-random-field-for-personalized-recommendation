@@ -189,3 +189,27 @@ epinions-recommendation-system/
 ├── requirements.txt
 └── README.md
 
+## 📚 Inspiration & Comparison with Literature
+
+Our project is inspired by the paper: [“Scalable Recommendation with Social Influence and Sequential Modeling” (IJCAI 2017)](https://cseweb.ucsd.edu/~jmcauley/pdfs/ijcai17a.pdf).  
+
+- The paper combines **sequential Markov models** with **Social Bayesian approaches** to leverage both **sequential and social influence**.  
+- In contrast, our project replaces the **sequential Markov model** with a **spatial Markov model**, which is better suited for **top-N recommendation tasks**.  
+- We also incorporate **social features in a spatial form** to improve personalized recommendations.
+
+**Performance comparison:**
+
+| Model | AUC Score |
+|-------|-----------|
+| Bayesian (Paper) | 0.53 |
+| Sequential Markov + Social Bayesian (Paper) | 0.58 |
+| Bayesian (Our Project) | 0.58 |
+| Socially-Aware Spatial Markov Random Field (Our Project) | **0.6248** |
+
+**Key Insights:**
+
+- Our model outperforms the paper by **~6% relative improvement** due to the use of **spatial modeling** and enhanced **social feature integration**.  
+- Compared to our baseline (Jaccard similarity), the model achieves a **~25% relative improvement**, demonstrating the importance of combining **content, behavior, and social network information** for top-N recommendations.  
+- Using a **spatial Markov approach** allows the model to better capture item correlations for top-N recommendation, whereas sequential models are limited to predicting the next item in a sequence.
+
+
