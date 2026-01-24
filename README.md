@@ -2,6 +2,11 @@
 Developed a top-10 item recommendation system for a user using the Socially-Aware Bayesian Markov Model.
 **EDA, Probabilistic Models, and Social-Aware Recommendations**
 
+## 📺 Project Video
+
+Watch the demo on YouTube: [Epinions Recommendation System Demo](https://youtu.be/fTDacdtgvng?si=ICQoBSLk06JArFKt)
+
+
 ## 📌 Project Overview
 
 In this project, we developed a **top-N item recommendation system** using the **Socially-Aware Bayesian Markov Model**, which leverages a **Markov Random Field (MRF)** to refine item rating predictions by incorporating opinions from socially connected neighbors in a **trust network**. The model employs **Bayesian-inspired Logistic Regression** with **35 features**, including:  
