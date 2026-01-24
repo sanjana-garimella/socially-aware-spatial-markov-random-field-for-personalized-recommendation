@@ -27,6 +27,10 @@ This dataset originates from **general consumer reviews collected from an e-comm
 - **11,197 items**
 - **Sparsity:** 99.99%
 
+We deliberately selected the Epinions dataset due to its **extreme sparsity (99.99%)**, which results in limited historical interactions for most users and items.  
+This characteristic makes the dataset particularly suitable for studying **cold-start problems** and evaluating the robustness of recommendation models under sparse data conditions.
+
+
 Each review includes:
 - User ID  
 - Item ID  
