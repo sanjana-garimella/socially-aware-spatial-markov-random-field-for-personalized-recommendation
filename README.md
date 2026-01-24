@@ -6,6 +6,11 @@ Developed a top-10 item recommendation system for a user using the Socially-Awar
 
 Watch the demo on YouTube: [Epinions Recommendation System Demo](https://youtu.be/fTDacdtgvng?si=ICQoBSLk06JArFKt)
 
+## 👥 Contributors
+
+- **[Sanjana Garimella](https://github.com/sanjana-garimella/)**
+- **[Priyanka Nidadavolu](https://github.com/priyanka-nidadavolu)**
+
 
 ## 📌 Project Overview
 
@@ -218,10 +223,6 @@ epinions-recommendation-system/
 ├── requirements.txt
 └── README.md
 ```
-## 👥 Contributors
-
-- **[Sanjana Garimella](https://github.com/sanjana-garimella/)**
-- **[Priyanka Nidadavolu](https://github.com/priyanka-nidadavolu)**
 
 
 
