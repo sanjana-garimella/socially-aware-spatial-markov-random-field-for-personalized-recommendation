@@ -212,5 +212,11 @@ epinions-recommendation-system/
 │
 ├── requirements.txt
 └── README.md
+```
+## 👥 Contributors
+
+- **[Sanjana Garimella](https://github.com/sanjana-garimella/)**
+- **[Priyanka Nidadavolu](https://github.com/priyanka-nidadavolu)**
+
 
 
