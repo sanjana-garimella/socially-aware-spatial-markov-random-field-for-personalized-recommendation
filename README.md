@@ -168,27 +168,6 @@ Key observations:
 
 ---
 
-## 📁 Project Structure
-
-```text
-epinions-recommendation-system/
-│
-├── data/
-│   ├── epinions.txt
-│   ├── network_trust.txt
-│   └── network_trustedby.txt
-│
-├── notebooks/
-│   └── epinions_recommendation.ipynb
-│
-├── models/
-│   ├── jaccard_model.py
-│   ├── bayesian_model.py
-│   └── social_bayesian_markov.py
-│
-├── requirements.txt
-└── README.md
-
 ## 📚 Inspiration & Comparison with Literature
 
 Our project is inspired by the paper: [“Scalable Recommendation with Social Influence and Sequential Modeling” (IJCAI 2017)](https://cseweb.ucsd.edu/~jmcauley/pdfs/ijcai17a.pdf).  
@@ -211,5 +190,27 @@ Our project is inspired by the paper: [“Scalable Recommendation with Social In
 - Our model outperforms the paper by **~6% relative improvement** due to the use of **spatial modeling** and enhanced **social feature integration**.  
 - Compared to our baseline (Jaccard similarity), the model achieves a **~25% relative improvement**, demonstrating the importance of combining **content, behavior, and social network information** for top-N recommendations.  
 - Using a **spatial Markov approach** allows the model to better capture item correlations for top-N recommendation, whereas sequential models are limited to predicting the next item in a sequence.
+
+
+## 📁 Project Structure
+
+```text
+epinions-recommendation-system/
+│
+├── data/
+│   ├── epinions.txt
+│   ├── network_trust.txt
+│   └── network_trustedby.txt
+│
+├── notebooks/
+│   └── epinions_recommendation.ipynb
+│
+├── models/
+│   ├── jaccard_model.py
+│   ├── bayesian_model.py
+│   └── social_bayesian_markov.py
+│
+├── requirements.txt
+└── README.md
 
 
