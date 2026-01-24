@@ -128,10 +128,11 @@ Key observations:
 
 ## 🔍 Key Insights
 
-- Collaborative filtering fails under extreme sparsity
-- Probabilistic models provide large gains
-- Social trust significantly improves recommendations
-- Combining **content + behavior + social structure** yields best performance
+- Collaborative filtering fails under **extreme sparsity** and performs close to random.
+- The dataset was **intentionally chosen due to its high sparsity (99.99%)**, making it well-suited for studying **cold-start problems** in recommendation systems.
+- Probabilistic models provide significant performance gains in sparse settings.
+- Social trust information significantly improves recommendation quality by propagating preference signals.
+- Combining **content + behavior + social structure** yields the best overall performance.
 
 ---
 
@@ -141,19 +142,10 @@ Key observations:
 - Logistic Regression
 - Bayesian Modeling
 - Social Network Analysis
-- Markov Random Fields
+- Markov Random Fields (MRF)
 - Feature Engineering
-- Sparse Data Handling
+- Sparse Data & Cold-Start Handling
 
----
-
-## 🚀 Future Work
-
-- Matrix Factorization (ALS, SVD++)
-- Graph Neural Networks (GNNs)
-- Temporal modeling
-- LLM-based review embeddings
-- Cold-start handling
 
 ---
 
