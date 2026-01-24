@@ -17,6 +17,10 @@ Three recommendation models are implemented and compared using **AUC**:
 
 ## 📂 Dataset Description
 
+The dataset used in this project is the **Epinions dataset**
+
+This dataset originates from **general consumer reviews collected from an e-commerce platform, Shopping.com**, and was later curated for research and academic use. It contains both **user–item review interactions** and a **user trust network**, making it well-suited for studying recommendation systems with social influence.
+
 ### Review Dataset (`epinions.txt`)
 - **50,000 reviews**
 - **39,719 users**
