@@ -1,17 +1,36 @@
-# socially-aware-markov-random-field-for-personalized-recommendation
+# Socially-Aware-Markov-Random-Field-for-Personalized-Recommendation
 Developed a top-10 item recommendation system for a user using the Socially-Aware Bayesian Markov Model.
-
-# 🛒 Epinions Recommendation System  
 **EDA, Probabilistic Models, and Social-Aware Recommendations**
 
 ## 📌 Project Overview
 
-This project builds and evaluates a **recommendation system on the Epinions dataset**, a real-world platform containing **user reviews and social trust relationships**. The objective is to analyze how recommendation performance improves when moving from **basic collaborative filtering** to **probabilistic and socially informed models**, especially under **extreme data sparsity**.
+In this project, we developed a **top-N item recommendation system** using the **Socially-Aware Bayesian Markov Model**, which leverages a **Markov Random Field (MRF)** to refine item rating predictions by incorporating opinions from socially connected neighbors in a **trust network**. The model employs **Bayesian-inspired Logistic Regression** with **35 features**, including:  
 
-Three recommendation models are implemented and compared using **AUC**:
-1. Jaccard Similarity (Collaborative Filtering baseline)
-2. Bayesian Logistic Regression
-3. Social Bayesian Markov Model (Trust-aware)
+- **Review characteristics:** price paid, timestamp, review text length  
+- **Social network features:** trust relationships, PageRank scores, centrality measures  
+- **Engineered interaction features**
+
+The goal of this project is to analyze how recommendation performance improves when moving from **basic collaborative filtering** to **probabilistic and socially-aware models**, particularly under **extreme sparsity** and **cold-start conditions**.
+
+---
+
+## 🧠 Models Implemented
+
+Three models were implemented and compared using **AUC** to evaluate their ability to rank items that users would rate highly (≥4 stars) within the top-N list:
+
+1. **Jaccard Similarity (Collaborative Filtering baseline)**  
+   - User-user and item-item similarity  
+   - No content or social features  
+
+2. **Bayesian Logistic Regression**  
+   - Uses **3 review features**: price, time, and review text length  
+   - Probabilistic model for rating prediction  
+
+3. **Social Bayesian Markov Model (Best Model)**  
+   - Combines **Bayesian Logistic Regression with 35 features** + MRF social smoothing  
+   - Incorporates **trust network information** to propagate preference signals  
+
+Comparing AUC scores across these models demonstrates how incorporating **social and behavioral features** improves top-N recommendation accuracy over baseline methods.
 
 ---
 
