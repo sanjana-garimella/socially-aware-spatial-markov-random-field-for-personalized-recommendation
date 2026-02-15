@@ -1,3 +1,126 @@
+# Socially Aware Spatial MRF Recommender
+
+Clean API version of the original notebook project for top-N recommendation using:
+- Jaccard similarity
+- Bayesian logistic regression
+- Social Bayesian Markov model
+
+Original repository: [sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation](https://github.com/sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation)
+
+## Files
+
+- `models.py` - model implementations
+- `train_and_save.py` - trains and saves models
+- `app.py` - FastAPI inference API
+- `requirements.txt` - minimal dependencies
+- `Dockerfile`, `docker-compose.yml` - local Docker deployment
+
+## Data
+
+Place dataset files in:
+- `epinions_data/epinions.txt`
+- `epinions_data/network_trust.txt`
+
+## Free Deployment (Local)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python train_and_save.py 5000
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+
+API docs: `http://localhost:8000/docs`
+
+## Free Deployment (Docker)
+
+```bash
+docker compose up --build
+```
+
+## Endpoints
+
+- `GET /health`
+- `POST /recommend`
+- `POST /predict`
+
+```bash
+curl -X POST "http://localhost:8000/recommend" \
+  -H "Content-Type: application/json" \
+  -d '{"user_id":"user123","k":10,"model_type":"social_bayesian"}'
+```
+# Socially Aware Spatial MRF Recommender
+
+Top-N recommendation system using:
+- Jaccard similarity baseline
+- Bayesian logistic regression
+- Social Bayesian Markov model with trust-network signals
+
+Original project repository: [sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation](https://github.com/sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation)
+
+## Clean Project Layout
+
+- `epinions_recommendation.ipynb` - original notebook
+- `models.py` - extracted model implementations
+- `train_and_save.py` - training + model persistence script
+- `app.py` - FastAPI inference API
+- `requirements.txt` - minimal dependencies
+- `Dockerfile` and `docker-compose.yml` - containerized local deployment
+
+## Free Deployment Options Only
+
+### 1) Local (free, easiest)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python train_and_save.py 5000
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+
+API docs: `http://localhost:8000/docs`
+
+### 2) Docker on your machine (free)
+
+```bash
+docker compose up --build
+```
+
+### 3) Hugging Face Spaces (free CPU tier)
+
+Use this repo with Docker Space support:
+1. Create a new Hugging Face Space (Docker SDK)
+2. Push this repo contents
+3. Keep app entrypoint as `uvicorn app:app --host 0.0.0.0 --port 8000`
+
+Note: model training can be expensive on free CPUs. Train locally first and include `saved_models/` if needed.
+
+## Data Requirement
+
+Expected files:
+- `epinions_data/epinions.txt`
+- `epinions_data/network_trust.txt`
+
+## API Endpoints
+
+- `GET /health`
+- `POST /recommend`
+- `POST /predict`
+
+Example:
+
+```bash
+curl -X POST "http://localhost:8000/recommend" \
+  -H "Content-Type: application/json" \
+  -d '{"user_id":"user123","k":10,"model_type":"social_bayesian"}'
+```
+
+## Notes
+
+- This repo intentionally stays small and simple.
+- Only free deployment paths are documented here.
 # Socially-Aware-Spatial-Markov-Random-Field-for-Personalized-Recommendation
 Developed top-10 item recommender using Socially-Aware Bayesian Markov Model, integrating social trust, review features, and probabilistic modeling.
 
@@ -166,6 +289,7 @@ Key observations:
 
 ## 🛠️ Technologies & Concepts
 
+**Machine Learning & Recommendation:**
 - Recommender Systems
 - Logistic Regression
 - Bayesian Modeling
@@ -174,6 +298,14 @@ Key observations:
 - Feature Engineering
 - Sparse Data & Cold-Start Handling
 
+**Deployment & Production:**
+- FastAPI (REST API)
+- Docker & Docker Compose
+- Kubernetes (K8s)
+- AWS ECS/Fargate
+- Google Cloud Run
+- CI/CD (GitHub Actions)
+- Nginx (Load Balancing)
 
 ---
 
@@ -201,26 +333,154 @@ Our project is inspired by the paper: [“Scalable Recommendation with Social In
 - Using a **spatial Markov approach** allows the model to better capture item correlations for top-N recommendation, whereas sequential models are limited to predicting the next item in a sequence.
 
 
+## 🚀 Deployment
+
+This project now includes a **complete deployment solution** that allows you to deploy the recommendation models anywhere!
+
+### Quick Start (5 minutes)
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Train models (use sample for quick testing)
+python train_and_save.py 5000
+
+# 3. Start the API
+python app.py
+
+# 4. Test the API
+curl http://localhost:8000/health
+python test_api.py
+```
+
+### Deployment Options
+
+| Platform | Setup Time | Best For |
+|----------|-----------|----------|
+| **Local Docker** | 3 min | Development, testing |
+| **Heroku** | 10 min | Quick demos, MVPs |
+| **Google Cloud Run** | 10 min | Auto-scaling production |
+| **AWS ECS** | 20 min | Enterprise production |
+| **Kubernetes** | 30 min | Large-scale deployments |
+
+### API Endpoints
+
+Once deployed, your API provides:
+
+- `POST /recommend` - Get top-k item recommendations
+- `POST /predict` - Predict rating probability
+- `GET /health` - Health check
+- `GET /docs` - Interactive Swagger UI documentation
+
+### Example Usage
+
+```python
+import requests
+
+# Get recommendations
+response = requests.post(
+    "http://localhost:8000/recommend",
+    json={
+        "user_id": "user123",
+        "k": 10,
+        "model_type": "social_bayesian"
+    }
+)
+print(response.json())
+```
+
+### Deployment Documentation
+
+- 📖 **[Quick Start Guide](QUICKSTART.md)** - Get running in 5 minutes
+- 📖 **[Full Deployment Guide](DEPLOYMENT.md)** - Comprehensive guide for all platforms
+- 📖 **[Deployment Overview](DEPLOYMENT_README.md)** - Architecture and features
+- 💻 **[Client Example](client_example.py)** - Python client code
+- 🧪 **[API Tests](test_api.py)** - Test suite for deployed API
+
+### Docker Deployment
+
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
+
+# Or build and run manually
+docker build -t recommendation-api .
+docker run -p 8000:8000 recommendation-api
+```
+
+### Cloud Deployment Examples
+
+**Heroku:**
+```bash
+heroku create my-recommendation-api
+git push heroku main
+```
+
+**Google Cloud Run:**
+```bash
+gcloud run deploy --source . --platform managed
+```
+
+**AWS ECS:**
+```bash
+aws cloudformation create-stack \
+  --stack-name recommendation-api \
+  --template-body file://deploy/aws/cloudformation.yaml
+```
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
+
+---
+
 ## 📁 Project Structure
 
 ```text
 epinions-recommendation-system/
 │
-├── data/
+├── epinions_data/                    # Dataset files
 │   ├── epinions.txt
-│   ├── network_trust.txt
-│   └── network_trustedby.txt
+│   └── network_trust.txt
 │
 ├── notebooks/
-│   └── epinions_recommendation.ipynb
+│   └── epinions_recommendation.ipynb # Original research notebook
 │
-├── models/
-│   ├── jaccard_model.py
-│   ├── bayesian_model.py
-│   └── social_bayesian_markov.py
+├── saved_models/                     # Trained model files
+│   ├── jaccard_model.pkl
+│   ├── bayesian_model.pkl
+│   └── social_bayesian_model.pkl
 │
-├── requirements.txt
-└── README.md
+├── deploy/                           # Deployment configurations
+│   ├── aws/
+│   │   ├── ecs-task-definition.json
+│   │   └── cloudformation.yaml
+│   ├── gcp/
+│   │   └── cloudbuild.yaml
+│   ├── kubernetes/
+│   │   └── deployment.yaml
+│   ├── nginx/
+│   │   └── recommendation-api.conf
+│   └── systemd/
+│       └── recommendation-api.service
+│
+├── .github/workflows/
+│   └── deploy.yml                    # CI/CD pipeline
+│
+├── models.py                         # Model implementations
+├── app.py                            # FastAPI application
+├── train_and_save.py                 # Model training script
+├── client_example.py                 # Python client example
+├── test_api.py                       # API test suite
+│
+├── Dockerfile                        # Docker configuration
+├── docker-compose.yml                # Docker Compose setup
+├── heroku.yml                        # Heroku deployment
+│
+├── requirements.txt                  # Python dependencies
+├── README.md                         # This file
+├── QUICKSTART.md                     # Quick start guide
+├── DEPLOYMENT.md                     # Full deployment guide
+└── DEPLOYMENT_README.md              # Deployment overview
 ```
 
 
