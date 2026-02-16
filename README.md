@@ -1,11 +1,10 @@
 # Socially Aware Spatial MRF Recommender
 
-Clean API version of the original notebook project for top-N recommendation using:
+Clean API version of the notebook project for top-N recommendation using:
 - Jaccard similarity
 - Bayesian logistic regression
 - Social Bayesian Markov model
 
-Original repository: [sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation](https://github.com/sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation)
 
 ## Files
 
@@ -57,11 +56,10 @@ Top-N recommendation system using:
 - Bayesian logistic regression
 - Social Bayesian Markov model with trust-network signals
 
-Original project repository: [sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation](https://github.com/sanjana-garimella/socially-aware-spatial-markov-random-field-for-personalized-recommendation)
 
 ## Clean Project Layout
 
-- `epinions_recommendation.ipynb` - original notebook
+- `epinions_recommendation.ipynb`
 - `models.py` - extracted model implementations
 - `train_and_save.py` - training + model persistence script
 - `app.py` - FastAPI inference API
@@ -443,7 +441,7 @@ epinions-recommendation-system/
 │   └── network_trust.txt
 │
 ├── notebooks/
-│   └── epinions_recommendation.ipynb # Original research notebook
+│   └── epinions_recommendation.ipynb 
 │
 ├── saved_models/                     # Trained model files
 │   ├── jaccard_model.pkl
