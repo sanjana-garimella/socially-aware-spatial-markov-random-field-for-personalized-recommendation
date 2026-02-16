@@ -275,15 +275,6 @@ Dataset not included in repository due to size. Pre-trained models are provided 
 - **Sparse data scenarios** where traditional collaborative filtering fails
 - **Research** on social network effects in recommendation systems
 
----
-
-## 📖 Notes
-
-- This is a **production deployment** of academic research
-- Models are trained on sampled data (1,200 reviews) for deployment efficiency
-- Full notebook with detailed analysis available in original repository
-- Compatible with Python 3.10+ (3.10 recommended for stability)
-- Designed for free-tier deployment (local, Docker, HF Spaces)
 
 ---
 
