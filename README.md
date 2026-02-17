@@ -4,7 +4,7 @@
 
 Production-ready API for top-N recommendation using Socially-Aware Bayesian Markov Model with social trust network integration.
 
-**🌐 Live Demo:** https://huggingface.co/spaces/PriyankaNidada/recommended-systems
+**🌐 Live Demo:** [https://huggingface.co/spaces/PriyankaNidada/recommended-systems](https://priyankanidada-recommended-systems.hf.space/ui)
 
 **📺 Project Video:** [Epinions Recommendation System Demo](https://youtu.be/fTDacdtgvng?si=ICQoBSLk06JArFKt)
 
